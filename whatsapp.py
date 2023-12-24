@@ -23,5 +23,3 @@ class Prd():
                         .conversations(chat_sid) \
                         .messages \
                         .create(author='system', body = message)
-
-Prd.response('SM2a420ae56963140b5ac4fe0606657379', 'teste')
