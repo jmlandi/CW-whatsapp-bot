@@ -19,10 +19,7 @@ class Bruno():
                     'content': prompt
                 }
             ],
-            max_tokens = 256
+            max_tokens = 300
         )
 
         return completion.choices[0].message.content
-
-    def thread():
-        'this will be a Marta Thread Function'
