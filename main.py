@@ -1,7 +1,6 @@
-from assistants import Marta
-from whatsapp import Whatsapp
-from twilio.twiml.messaging_response import Message, MessagingResponse
-from flask import Flask, request, jsonify
+from assistants import Bruno
+from whatsapp import Sandbox, Prd
+from flask import Flask, request
 
 app = Flask('app')
 
@@ -9,18 +8,18 @@ app = Flask('app')
 def index():
     return 'API Online'
 
+# SANDBOX ENV // application/x-www-form-urlencoded
+@app.route('/sandbox-messages', methods=['POST'])
+def sandbox_messages():
+    Sandbox.response(request.form.get('MessageSid'), Bruno.response(request.form.get('Body')))
+    return 200
 
-
-
-@app.route('/messages', methods=['POST'])
-def messages():
-    # request_data = request.get_data()
-    Whatsapp.response('CHad85b100f3024b1cad2fb2e841f9529d', Marta.response(request.form.get('Body')))
-    return response, 200
+# PRD ENV // application/json
+@app.route('/16693335835-messages', methods=['POST'])
+def prd_messages():
+    content = request.json
+    Prd.response(content['message_sid'], Bruno.response(content['body']))
+    return 200
 
 if __name__ == '__main__':
     app.run()
-
-
-# last_message = 'Qual a melhor taxa que InfinitePay oferece?'
-# Whatsapp.response('CHad85b100f3024b1cad2fb2e841f9529d', Marta.response(last_message))
