@@ -19,8 +19,8 @@ def sandbox_messages():
 def prd_messages():
     content = request.json
     ai_answer = Bruno.response(content['body'])
-    response = jsonify({'response': ai_answer})
-    return response, 200
+    response = {'response': ai_answer}
+    return jsonify(response), 200
 
 if __name__ == '__main__':
     app.run()
