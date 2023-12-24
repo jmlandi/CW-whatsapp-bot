@@ -1,6 +1,6 @@
 from assistants import Bruno
 from whatsapp import Sandbox, Prd
-from flask import Flask, request
+from flask import Flask, request, jsonify
 
 app = Flask('app')
 
@@ -18,7 +18,8 @@ def sandbox_messages():
 @app.route('/chatbot-workflow', methods=['POST'])
 def prd_messages():
     content = request.json
-    response = Bruno.response(content['body'])
+    ai_answer = Bruno.response(content['body'])
+    response = jsonify({'response': ai_answer})
     return response, 200
 
 if __name__ == '__main__':
