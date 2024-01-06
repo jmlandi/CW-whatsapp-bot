@@ -45,6 +45,7 @@ class Prd():
                         }
                     ])
 
+        client.studio.v2.flows('FW82751984a3114708b0ccfcf7b7d5a9ce').fetch()
         client.studio.v2.flows.create(
                 friendly_name = friendly_name,
                 status = status,
