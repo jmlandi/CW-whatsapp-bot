@@ -13,7 +13,7 @@ def index():
 
 @app.route('/executions')
 def executions():
-    render_template('executions.html')
+    return render_template('executions.html')
 
 @app.route('/direct-messages', methods=['POST'])
 def sandbox_messages():
