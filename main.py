@@ -22,5 +22,11 @@ def prd_messages():
     response = {'response': ai_answer}
     return jsonify(response), 200
 
+@app.route('/incoming-message', methods=['POST'])
+def incoming_message():
+    content = request.json
+    print(content)
+    return 200
+
 if __name__ == '__main__':
     app.run()
