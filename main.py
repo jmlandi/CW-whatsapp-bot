@@ -25,8 +25,9 @@ def prd_messages():
 @app.route('/incoming-message', methods=['POST'])
 def incoming_message():
     content = request.get_data()
+    contact = request.form.get('From')
     print(content)
-    Prd.create_flow()
+    Prd.create_flow(contact)
     return 200
 
 if __name__ == '__main__':

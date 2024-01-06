@@ -6,6 +6,7 @@ import os
 account_sid = os.environ.get('TWILIO_ACCOUNT_SID')
 auth_token = os.environ.get('TWILIO_AUTH_TOKEN')
 flow_id = 'FW82751984a3114708b0ccfcf7b7d5a9ce'
+msg_id = 'MGd94a9cfa8b692f43cc247944988eb291'
 
 client = Client(account_sid, auth_token)
 
@@ -20,16 +21,16 @@ class Sandbox():
 
 class Prd():
     
-    def send_template():
+    def send_template(contact):
         client.messages.create(
                 content_sid='HX3b06ffbe042cc634617ae08ff3675c89',
-                from_='MGd94a9cfa8b692f43cc247944988eb291',
-                to='whatsapp:+5516992772621'
+                from_=msg_id,
+                to=contact
             )
         
-    def create_flow():
+    def create_flow(contact):
         client.studio \
                   .v2 \
                   .flows(flow_id) \
                   .executions \
-                  .create(to='whatsapp:+5516992772621', from_='+MGd94a9cfa8b692f43cc247944988eb291')
+                  .create(to=contact, from_=msg_id)
