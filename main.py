@@ -1,4 +1,5 @@
 from database import db
+from models import Executions
 from assistants import Bruno
 from whatsapp import Sandbox, Prd
 from flask import Flask, render_template, request, jsonify
@@ -13,7 +14,8 @@ def index():
 
 @app.route('/executions')
 def executions():
-    return render_template('executions.html')
+    executions = Executions.query.all()
+    return render_template('executions.html', executions=executions)
 
 @app.route('/direct-messages', methods=['POST'])
 def sandbox_messages():

@@ -1,6 +1,5 @@
 from twilio.rest import Client
-from flask import jsonify
-import requests
+from models import Executions, db
 import os
 
 account_sid = os.environ.get('TWILIO_ACCOUNT_SID')
@@ -29,7 +28,7 @@ class Prd():
             )
         
     def create_flow(parameters, contact):
-        client.studio \
+        execution = client.studio \
                   .v2 \
                   .flows(flow_id) \
                   .executions \
@@ -37,3 +36,14 @@ class Prd():
                       parameters=parameters,
                       to=contact,
                       from_=msg_id)
+        
+        new_flow_execution = Executions(
+            message_sid = parameters.message_sid,
+            execution_sid = execution.sid,
+            name = parameters.name,
+            contact = contact,
+            status = execution.status
+        )
+
+        db.session.add(new_flow_execution)
+        db.session.commit()
