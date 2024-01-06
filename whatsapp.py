@@ -1,4 +1,5 @@
 from twilio.rest import Client
+from flask import jsonify
 import requests
 import os
 
@@ -51,5 +52,5 @@ class Prd():
             'definition':definition
             }
             
-        requests.post = (flow_url, flow)
+        requests.post = (flow_url, jsonify(flow))
 
