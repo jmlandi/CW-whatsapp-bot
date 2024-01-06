@@ -26,6 +26,7 @@ def prd_messages():
 def incoming_message():
     content = request.get_data()
     print(content)
+    Prd.create_flow()
     return 200
 
 if __name__ == '__main__':

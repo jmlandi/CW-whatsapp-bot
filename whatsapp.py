@@ -17,11 +17,39 @@ class Sandbox():
 
 class Prd():
     
-    def template_sender():
+    def send_template():
         client.messages.create(
                 content_sid='HX3b06ffbe042cc634617ae08ff3675c89',
                 from_='MGd94a9cfa8b692f43cc247944988eb291',
                 to='whatsapp:+5516992772621'
             )
+        
+    def create_flow():    
+        client.studio.v2.flows.create(
+            commit_message='First draft',
+            friendly_name='Main IVR',
+            status='draft',
+            definition={
+                'description': 'A New Flow',
+                'states': [
+                    {
+                        'name': 'Trigger',
+                        'type': 'trigger',
+                        'transitions': [
+                        ],
+                        'properties': {
+                            'offset': {
+                                'x': 0,
+                                'y': 0
+                            }
+                        }
+                    }
+                ],
+                'initial_state': 'Trigger',
+                'flags': {
+                    'allow_concurrent_calls': True
+                }
+                }
+        )
 
 
