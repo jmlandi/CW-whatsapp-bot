@@ -45,11 +45,31 @@ class Prd():
                         }
                     ])
 
-        client.studio.v2.flows('FW82751984a3114708b0ccfcf7b7d5a9ce').fetch()
         client.studio.v2.flows.create(
-                friendly_name = friendly_name,
-                status = status,
-                definition = definition
+                commit_message='First draft',
+                friendly_name='Main IVR',
+                status='draft',
+                definition={
+                    'description': 'A New Flow',
+                    'states': [
+                        {
+                            'name': 'Trigger',
+                            'type': 'trigger',
+                            'transitions': [
+                            ],
+                            'properties': {
+                                'offset': {
+                                    'x': 0,
+                                    'y': 0
+                                }
+                            }
+                        }
+                    ],
+                    'initial_state': 'Trigger',
+                    'flags': {
+                        'allow_concurrent_calls': True
+                    }
+                }
             )
 
 
