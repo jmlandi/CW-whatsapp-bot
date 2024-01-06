@@ -5,7 +5,7 @@ import os
 
 account_sid = os.environ.get('TWILIO_ACCOUNT_SID')
 auth_token = os.environ.get('TWILIO_AUTH_TOKEN')
-flow_url = 'https://webhooks.twilio.com/v1/Accounts/AC15fac1d0add7090595bdda2dd3af4b03/Flows/FW82751984a3114708b0ccfcf7b7d5a9ce'
+flow_url = 'https://studio.twilio.com/v2/Flows/FW82751984a3114708b0ccfcf7b7d5a9ce/Executions'
 
 client = Client(account_sid, auth_token)
 
