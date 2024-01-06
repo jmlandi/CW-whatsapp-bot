@@ -5,7 +5,7 @@ import os
 
 account_sid = os.environ.get('TWILIO_ACCOUNT_SID')
 auth_token = os.environ.get('TWILIO_AUTH_TOKEN')
-flow_url = 'https://webhook.site/c42a1ea9-e3ba-41b4-aafe-e95981ff7af2' # 'https://webhooks.twilio.com/v1/Accounts/AC15fac1d0add7090595bdda2dd3af4b03/Flows/FW82751984a3114708b0ccfcf7b7d5a9ce'
+flow_url = 'https://webhooks.twilio.com/v1/Accounts/AC15fac1d0add7090595bdda2dd3af4b03/Flows/FW82751984a3114708b0ccfcf7b7d5a9ce'
 
 client = Client(account_sid, auth_token)
 
@@ -28,7 +28,6 @@ class Prd():
             )
         
     def create_flow():
-        
         friendly_name = 'teste'
         status = 'draft'
         definition = [
