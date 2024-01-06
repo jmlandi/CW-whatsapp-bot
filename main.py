@@ -24,7 +24,7 @@ def prd_messages():
 
 @app.route('/incoming-message', methods=['POST'])
 def incoming_message():
-    content = request.json
+    content = request.data
     print(content)
     return 200
 
