@@ -1,10 +1,11 @@
 @import url(https://db.onlinewebfonts.com/c/917a69d24b88e2d4d2ca803c0605bd59?family=Cera+PRO+Regular);
+@import url(https://db.onlinewebfonts.com/c/917a69d24b88e2d4d2ca803c0605bd59?family=Cera+PRO+Light);
 
 * {
     margin: 0px;
     padding: 0px;
     box-sizing: border-box;
-    font-family: 'Cera PRO Regular', sans-serif;
+    font-family: 'Cera PRO Light', sans-serif;
     transition: ease-out .2s all;
 }
 
