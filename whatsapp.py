@@ -52,5 +52,6 @@ class Prd():
             'definition':definition
             }
             
-        requests.post = (flow_url, jsonify(flow))
+        res = requests.post(flow_url, json=flow)
+        return f'Server response: {res.text}'
 
