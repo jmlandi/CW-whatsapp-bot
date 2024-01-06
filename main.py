@@ -8,13 +8,11 @@ app = Flask('app')
 def index():
     return 'API Online'
 
-# SANDBOX ENV // application/x-www-form-urlencoded
 @app.route('/direct-messages', methods=['POST'])
 def sandbox_messages():
     Sandbox.response(request.form.get('MessageSid'), Bruno.response(request.form.get('Body')))
     return 200
 
-# PRD ENV // application/json
 @app.route('/chatbot-workflow', methods=['POST'])
 def prd_messages():
     content = request.json
@@ -24,9 +22,9 @@ def prd_messages():
 
 @app.route('/incoming-message', methods=['POST'])
 def incoming_message():
-    # request.get_data()
     parameters = {
         'name':request.form.get('ProfileName'),
+        'from':request.form.get('From'),
         'message_sid':request.form.get('MessageSid')
         }
     contact = request.form.get('From')
