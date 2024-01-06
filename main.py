@@ -24,7 +24,7 @@ def prd_messages():
 
 @app.route('/incoming-message', methods=['POST'])
 def incoming_message():
-    content = request.data
+    content = request.get_data()
     print(content)
     return 200
 
