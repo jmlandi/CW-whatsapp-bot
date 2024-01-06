@@ -5,7 +5,7 @@ import os
 
 account_sid = os.environ.get('TWILIO_ACCOUNT_SID')
 auth_token = os.environ.get('TWILIO_AUTH_TOKEN')
-flow_url = 'https://studio.twilio.com/v2/Flows/FW82751984a3114708b0ccfcf7b7d5a9ce/Executions'
+flow_id = 'FW82751984a3114708b0ccfcf7b7d5a9ce'
 
 client = Client(account_sid, auth_token)
 
@@ -28,59 +28,8 @@ class Prd():
             )
         
     def create_flow():
-        friendly_name = 'teste'
-        status = 'draft'
-        definition = jsonify([
-                        {
-                            'name': 'Trigger',
-                            'type': 'trigger',
-                            'transitions': [
-                            ],
-                            'properties': {
-                                'offset': {
-                                    'x': 0,
-                                    'y': 0
-                                }
-                            }
-                        }
-                    ])
-
-        client.studio.v2.flows.create(
-                commit_message='First draft',
-                friendly_name='Main IVR',
-                status='draft',
-                definition={
-                    'description': 'A New Flow',
-                    'states': [
-                        {
-                            'name': 'Trigger',
-                            'type': 'trigger',
-                            'transitions': [
-                            ],
-                            'properties': {
-                                'offset': {
-                                    'x': 0,
-                                    'y': 0
-                                }
-                            }
-                        }
-                    ],
-                    'initial_state': 'Trigger',
-                    'flags': {
-                        'allow_concurrent_calls': True
-                    }
-                }
-            )
-
-
-
-        '''
-        flow = {
-            'friendly_name':friendly_name,
-            'status':status,
-            'definition': definition
-            }    
-        res = requests.post(flow_url, json=flow)
-        return f'Server response: {res.text}'
-        '''
-
+        client.studio \
+                  .v2 \
+                  .flows(flow_id) \
+                  .executions \
+                  .create(to='whatsapp:+5516992772621', from_='+MGd94a9cfa8b692f43cc247944988eb291')
