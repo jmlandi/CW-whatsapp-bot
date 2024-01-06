@@ -1,12 +1,19 @@
+from database import db
 from assistants import Bruno
 from whatsapp import Sandbox, Prd
-from flask import Flask, request, jsonify
+from flask import Flask, render_template, request, jsonify
 
 app = Flask('app')
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///database.db'
+db.init_app(app)
 
 @app.route('/')
 def index():
     return 'API Online'
+
+@app.route('/executions')
+def executions():
+    render_template('executions.html')
 
 @app.route('/direct-messages', methods=['POST'])
 def sandbox_messages():

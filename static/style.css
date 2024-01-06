@@ -1,0 +1,9 @@
+@import url(https://db.onlinewebfonts.com/c/917a69d24b88e2d4d2ca803c0605bd59?family=Cera+PRO+Regular);
+
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: 'Cera PRO Regular', sans-serif;
+    transition: ease-out .2s all;
+}
