@@ -18,12 +18,10 @@ class Sandbox():
 class Prd():
     
     def template_sender():
-        message = client.messages.create(
+        client.messages.create(
                 content_sid='HX3b06ffbe042cc634617ae08ff3675c89',
                 from_='MGd94a9cfa8b692f43cc247944988eb291',
                 to='whatsapp:+5516992772621'
             )
-
-Prd.template_sender()
 
 
