@@ -38,9 +38,9 @@ class Prd():
                       from_=msg_id)
         
         new_flow_execution = Executions(
-            message_sid = parameters.message_sid,
+            message_sid = parameters['message_sid'],
             execution_sid = execution.sid,
-            name = parameters.name,
+            name = parameters['name'],
             contact = contact,
             status = execution.status
         )
