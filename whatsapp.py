@@ -48,7 +48,7 @@ class Prd():
         flow = {
             'friendly_name':friendly_name,
             'status':status,
-            'definition':definition
+            'definition':jsonify(definition)
             }
             
         res = requests.post(flow_url, json=flow)
