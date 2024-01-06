@@ -7,3 +7,16 @@
     font-family: 'Cera PRO Regular', sans-serif;
     transition: ease-out .2s all;
 }
+
+body {
+    background-color: rgb(228, 228, 228);
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100vw;
+    height: 100vh;
+}
