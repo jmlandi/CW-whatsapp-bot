@@ -30,7 +30,7 @@ class Prd():
     def create_flow():
         friendly_name = 'teste'
         status = 'draft'
-        definition = [
+        definition = jsonify([
                         {
                             'name': 'Trigger',
                             'type': 'trigger',
@@ -43,14 +43,23 @@ class Prd():
                                 }
                             }
                         }
-                    ]
+                    ])
 
+        client.studio.v2.flows.create(
+                friendly_name = friendly_name,
+                status = status,
+                definition = definition
+            )
+
+
+
+        '''
         flow = {
             'friendly_name':friendly_name,
             'status':status,
-            'definition':jsonify(definition)
-            }
-            
+            'definition': definition
+            }    
         res = requests.post(flow_url, json=flow)
         return f'Server response: {res.text}'
+        '''
 
