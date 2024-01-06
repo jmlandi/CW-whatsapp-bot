@@ -28,9 +28,12 @@ class Prd():
                 to=contact
             )
         
-    def create_flow(contact):
+    def create_flow(parameters, contact):
         client.studio \
                   .v2 \
                   .flows(flow_id) \
                   .executions \
-                  .create(to=contact, from_=msg_id)
+                  .create(
+                      parameters=parameters,
+                      to=contact,
+                      from_=msg_id)

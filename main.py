@@ -24,10 +24,13 @@ def prd_messages():
 
 @app.route('/incoming-message', methods=['POST'])
 def incoming_message():
-    content = request.get_data()
+    # request.get_data()
+    parameters = {
+        'name':request.form.get('ProfileName'),
+        'message_sid':request.form.get('MessageSid')
+        }
     contact = request.form.get('From')
-    print(content)
-    Prd.create_flow(contact)
+    Prd.create_flow(parameters, contact)
     return 200
 
 if __name__ == '__main__':
