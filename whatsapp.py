@@ -20,12 +20,14 @@ class Sandbox():
 
 class Prd():
     
+    '''
     def send_template(contact):
         client.messages.create(
                 content_sid='HX3b06ffbe042cc634617ae08ff3675c89',
                 from_=msg_id,
                 to=contact
             )
+    '''
         
     def create_flow(parameters, contact):
         execution = client.studio \
@@ -47,3 +49,20 @@ class Prd():
 
         db.session.add(new_flow_execution)
         db.session.commit()
+
+    def check_flow_execution(contact):
+        
+        contact_info = Executions.query.filter_by(contact=contact).first()
+        if contact_info == False:
+            return False
+        else:
+            execution = client.studio \
+                  .v2 \
+                  .flows(flow_id) \
+                  .executions(contact_info.message_sid) \
+                  .fetch()
+            if execution.status != 'active':
+                return False
+            else:
+                return True 
+            

@@ -11,6 +11,7 @@
         <h1>Bruno Executions</h1>
         <table>
               <tr>
+                <th> ID </th>
                 <th> Message SID </th>
                 <th> Execution SID </th>
                 <th> Name </th>
@@ -20,6 +21,7 @@
           {% block content %}
             {% for i in executions %}
               <tr>
+                <td> {{ i.id }} </td>
                 <td> {{ i.message_sid }} </td>
                 <td> {{ i.execution_sid }} </td>
                 <td> {{ i.name }} </td>
