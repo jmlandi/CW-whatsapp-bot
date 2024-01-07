@@ -1,0 +1,80 @@
+Assunto,Categoria da Conversa,Palavras-chave,Informação
+InfiniteCard,Informação,Taxas e Condições,"O InfiniteCard é um cartão digital pré-pago, onde o limite disponível é o saldo da sua conta digital do app InfinitePay! Você pode utilizar o cartão em compras presenciais e online. É possível usar o InfiniteCard na modalidade débito ou crédito à vista. Para compras presenciais em lojas físicas, basta deixar o cartão salvo em sua carteira digital do Google (Android) ou Carteira (iOS) e utilizar a aproximação para pagamento de suas compras. Além disso, o InfiniteCard possui cashback de 1,5% em até R$20.000,00 a cada 30 dias em compras, porém, o cashback só é válido para compras na modalidade crédito à vista."
+InfiniteCard,Informação,Cashback,"O InfiniteCard possui cashback de 1,5% em até R$20.000,00 a cada 30 dias em compras, porém, o cashback só é válido para compras na modalidade crédito à vista."
+InfiniteCard,Informação,Cartão Físico,"Atualmente não possuímos cartão físico, o InfiniteCard é digital. Entretanto, você pode adicionar o seu cartão InfiniteCard em uma carteira digital, caso seu celular tenha tecnologia NFC."
+InfiniteCard,Suporte,Criar Um Cartão,"Na tela inicial do seu aplicativo, em seu banco, clique em ""Cartões e mais"". Lá terão todos os cartões que possui e também a possibilidade de criar novos! Caso surja dúvidas, existem mais informações no site https://ajuda.infinitepay.io/pt-BR/articles/6503281-como-adicionar-seus-infinitecards-as-carteiras-digitais"
+InfiniteCard,Suporte,Carteira Digital,"Na tela inicial do seu aplicativo, clique em InfiniteCard, selecione o cartão que deseja adicionar a cateira digital e depois clique em ""Adicionar em minha carteira"". Caso não apareça essa opção, você pode adicionar manualmente no aplicativo da sua carteira digital, digitando as informações do cartão."
+InfiniteCard,Suporte,Contestação de Compra,"Em casos de contestação de compras feitas pelo seu InfiniteCard é necessário que entre em contato diretamente com nosso time de suporte através de um chat no aplicativo InfinitePay, e-mail ajuda@infinitepay.io ou através de um chat dentro da Web Dashboard no site app.infinitepay.io."
+InfiniteTap,Informação,Taxas e Condições,"O InfiniteTap transforma seu celular em maquininha e processa cartões das bandeiras Visa, Elo, Hipercard e MasterCard! Para consultar taxas por transação ou simular algum valor, acesse o site https://www.infinitepay.io/taxas"
+InfiniteTap,Informação,Requisitos Mínimos,"O InfiniteTap está disponível pra aparelhos com Android 10 (ou superior) ou iOS e com uma função chamada NFC. No site https://ajuda.infinitepay.io/pt-BR/articles/6610274-quais-aparelhos-celulares-sao-compativeis-com-o-infinitetap, você pode conferir se o seu modelo de celular é compatível."
+InfiniteTap,Informação,Como usar o InfiniteTap,"para utilizar o InfiniteTap, é só seguir o passo a passo abaixo:
+
+ 
+- Clique em ""InfiniteTap"" ou ""TapToPay"" na tela inicial;
+- Digitar o valor da venda;
+- Selecionar a modalidade (débito, crédito à vista ou parcelado);
+- Aguardar;
+- Aproximar o cartão do celular;
+- Se necessário, digitar a senha do cartão;
+- Aguardar o aparecimento do comprovante."
+InfiniteTap,Suporte,InfiniteTap Não Funciona,"Eu peço a gentileza que você faça o seguinte procedimento se o InfiniteTap não funciona em seu celular:
+
+Se o seu celular for Android: 
+
+- Desligue e ligue o seu aparelho;
+- Vá nas configurações do seu celular, clique em aplicativos/aplicações, encontre o app da InfinitePay e clique em limpar cache;
+- Deixe seu celular em modo avião e desative o modo avião para conectar seu celular para Wi-Fi ou 4G;
+- Altere a conexão de Wi-Fi para 4G ou vice-versa;
+- Insira o número cadastrado conosco;
+- Insira o código recebido por SMS/Whatsapp;
+- Tente o acesso.
+
+Se o seu celular for iOS (Apple):
+ 
+- Desligue e ligue o seu aparelho;
+- Vá nas configurações do seu celular, feche o app pelo gerenciador de tarefas;
+- Deixe seu celular em modo avião e desative o modo avião para conectar seu celular para Wi-Fi ou 4G;
+- Altere a conexão de Wi-Fi para 4G ou vice-versa;
+- Insira o número cadastrado conosco;
+- Insira o código recebido por SMS/Whatsapp;
+- Tente o acesso.
+
+Se o problema persistir, verifique se seu celular é compatível com o InfiniteTap ou entre em contato diretamente com nosso time de suporte através de um chat no aplicativo InfinitePay, e-mail ajuda@infinitepay.io ou através de um chat dentro da Web Dashboard no site app.infinitepay.io."
+InfiniteLink,Informação,Taxas e Condições,"O InfiniteLink é o link de pagamento da InfinitePay e ele é a solução ideal para quem busca praticidade e expansão de negócios usando apenas o App InfinitePay.
+Com o InfiniteLink, você gera um link de cobrança para seu cliente pagar em qualquer lugar do Brasil. Com o InfiniteLink você tem taxas pensadas para vender online com segurança. Por isso, as taxas do link de pagamento são diferentes da nossa InfiniteSmart e do InfiniteTap. Consulte ou simule as taxas do InfiniteLink no site: https://www.infinitepay.io/taxas"
+InfiniteLink,Informação,Como Criar um Link de Pagamento,"Para criar um link de pagamento para seu cliente, você só precisa ter o App InfinitePay atualizado na última versão disponível. 
+
+- Acesse o App InfinitePay
+- Clique em ""Enviar Cobrança""
+- Configure sua venda com valor, parcelas e bandeiras
+- Pronto! 
+
+Agora é só confirmar os dados da cobrança e compartilhar com seu cliente da maneira que achar melhor. 
+
+Importante: Sempre que você criar um InfiniteLink e selecionar um novo número de parcelas, também ocorrerá a alteração das parcelas nos links que já foram enviados e que ainda não foram pagos por seus clientes.
+
+"
+InfiniteLink,Informação,Durabilidade de um Link,"O InfiniteLink ao ser criado ele não expira, a não ser que você utilize a ferramente de cobrança, o SuperCobra"
+InfiniteLink,Informação,Integrações com E-commerce,Atualmente não temos integrações com e-commerces
+InfiniteLink,Informação,Recorrências e Cobranças,"Para usar recorrência nos links de pagamentos ou boletos, utilize o SuperCobra"
+SuperCobra ou Gestão de Cobrança,Informação,Encaminhar para Suporte (CSE),"Para maiores informações sobre o SuperCobra (gestão de cobranças) entre em contato diretamente com nosso time de suporte através de um chat no aplicativo InfinitePay, e-mail ajuda@infinitepay.io ou através de um chat dentro da Web Dashboard no site app.infinitepay.io."
+Maquininha De Cartão (POS),Informação,Encaminhar para Suporte (CSE),"Para maiores informações sobre a maquininha de cartão entre em contato diretamente com nosso time de suporte através de um chat no aplicativo InfinitePay, e-mail ajuda@infinitepay.io ou através de um chat dentro da Web Dashboard no site app.infinitepay.io."
+InfiniteCash,Informação,Encaminhar para Suporte (CSE),"Para maiores informações sobre o InfiniteCash (empréstimo) entre em contato diretamente com nosso time de suporte através de um chat no aplicativo InfinitePay, e-mail ajuda@infinitepay.io ou através de um chat dentro da Web Dashboard no site app.infinitepay.io."
+InfiniteSavings,Informação,Encaminhar para Suporte (CSE),"Para maiores informações sobre o InfiniteSavings entre em contato diretamente com nosso time de suporte através de um chat no aplicativo InfinitePay, e-mail ajuda@infinitepay.io ou através de um chat dentro da Web Dashboard no site app.infinitepay.io."
+InfiniteBank,Informação,Encaminhar para Suporte (CSE),"Para maiores informações sobre o InfiniteBank entre em contato diretamente com nosso time de suporte através de um chat no aplicativo InfinitePay, e-mail ajuda@infinitepay.io ou através de um chat dentro da Web Dashboard no site app.infinitepay.io."
+Pix,Informação,Encaminhar para Suporte (CSE),"Para maiores informações sobre o Pix entre em contato diretamente com nosso time de suporte através de um chat no aplicativo InfinitePay, e-mail ajuda@infinitepay.io ou através de um chat dentro da Web Dashboard no site app.infinitepay.io."
+Geral,Informação,Negociação de Taxas,Na InfinitePay não negociamos taxas dos pagamentos.
+Geral,Informação,Soluções InfinitePay,A InfinitePay é uma empresa que oferece as melhores soluções de pagamento com muita tecnologia e atenção com nossos clientes
+Geral,Informação,O que é a InfinitePay,"A InfinitePay é uma empresa focada em soluções de pagamentos para negócios, oferecendo uma variedade de produtos e serviços. Eles incluem maquininhas de cartão, um sistema que transforma celulares em maquininhas, e uma conta digital inteligente com cartão que oferece cashback. A InfinitePay também oferece o InfiniteLink, um serviço de link de pagamento, boletos gratuitos, planos de recebimento rápido e um serviço de gestão de cobranças chamado SuperCobra. Além disso, a empresa promove a inovação com o Tap to Pay no iPhone e fornece empréstimos para crescimento de negócios.
+
+Para mais informações, visite o site da InfinitePay: https://www.infinitepay.io/"
+Geral,Informação,Planos de Recebimento,"Os planos de recebimento que a InfinitePay trabalha hoje são:
+
+- Um dia útil
+- InfiniteNitro
+- Receba na Hora
+
+Tanto o InfiniteNitro quanto o Receba na Hora vão te pagar imediatamente, mas o InfiniteNitro você pode desativar e ativar quando quiser e o Receba Na Hora possui permanência mínima de 30 dias, flexibilizando as taxas. Veja mais a respeito no site: https://www.infinitepay.io/taxas"
+Geral,Informação,Contato com suporte,"É possível entrar em contato com o suporte de pós-venda através de um chat no aplicativo InfinitePay, e-mail ajuda@infinitepay.io ou através de um chat dentro da Web Dashboard no site app.infinitepay.io."
+Geral,Suporte,Cancelamento de conta,"Para cancelar sua conta, entre em contato diretamente com nosso time de suporte através de um chat no aplicativo InfinitePay, e-mail ajuda@infinitepay.io ou através de um chat dentro da Web Dashboard no site app.infinitepay.io."
+Geral,Suporte,Download do aplicativo,Baixe o aplicativo agora mesmo! Visite www.infinitepay.io/app-infinitepay

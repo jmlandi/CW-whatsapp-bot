@@ -1,5 +1,5 @@
 from database import db
-from models import Executions
+from models import Executions, Threads
 from assistants import Bruno
 from whatsapp import Prd
 from flask import render_template, request, jsonify
@@ -36,6 +36,32 @@ class Controller():
         
     def ai_response():
         content = request.json
-        ai_answer = Bruno.response(content['body'])
-        response = {'response': ai_answer}
+        
+        flow_id = content.flow
+        body = content.body
+        message = content.Body
+        topic = content.knowledge
+        start = content.start
+        
+        if start == 'true':
+
+            thread = Bruno.thread_init()
+            Bruno.thread_message(thread, body)
+            
+            run = Bruno.thread_run(thread)
+            Bruno.thread_response(thread, run)
+
+            messages = Bruno.thread_messages_list(thread)
+
+            new_thread = Threads(
+                flow_id = flow_id,
+                thread_id = thread.id,
+                topic = topic,
+                messages = messages
+            )
+            db.session.add(new_thread)
+            db.session.commit()
+
+
+        response = {'response': jsonify(Bruno.thread_assitant_reponse(thread))}
         return jsonify(response), 200

@@ -18,6 +18,7 @@ def executions():
 def ai_response():
     return Controller.ai_response()
 
+# only by message service, not apply on workflow
 @app.route('/incoming-message', methods=['POST'])
 def incoming_message():
     return Controller.incoming_message()
