@@ -18,11 +18,12 @@ def executions():
 def ai_response():
     return Controller.ai_response()
 
-
 @app.route('/incoming-message', methods=['POST'])
 def incoming_message():
     return Controller.incoming_message()
 
+with app.app_context():
+  db.create_all()
 
 if __name__ == '__main__':
     app.run()
