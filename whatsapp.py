@@ -53,7 +53,7 @@ class Prd():
     def check_flow_execution(contact):
         
         contact_info = Executions.query.filter_by(contact=contact).first()
-        if contact_info == False:
+        if contact_info == None:
             return False
         else:
             execution = client.studio \
