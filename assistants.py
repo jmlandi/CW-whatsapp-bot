@@ -4,19 +4,18 @@ import os
 
 client = OpenAI(api_key = os.environ.get('OPENAI_API_KEY'))
 
-'''
+
 knowledge_file = client.files.create(
-    file = open("knowledge/bruno_knowledge.csv", "rb"),
+    file = open("knowledge/gptknowledge_infinitepay.pdf", "rb"),
     purpose = "assistants"
 )
-'''
 
 assistant = client.beta.assistants.create(
     name = "Bruno",
-    instructions = "Seu nome Bruno. Você é uma agente de suporte que atenderá apenas clientes da empresa InfinitePay. Você trata seus clientes sempre com linguagem neutra, com linguajar acolhedor e bem-humorado. Quebre parágrafos com '\n' para facilitar na visualisação do texto e ao final de suas mensagens pergunte se pode ajudar em algo mais. Para seu atendimento, utilize os conteúdos do site https://ajuda.infinitepay.io/pt-BR/ se não houver informações suficientes ou o cliente precisar de suporte, mande as informações de atendimento com o time especializado, que se encontra no site https://ajuda.infinitepay.io/pt-BR/articles/3406982-quais-sao-os-canais-de-atendimento-da-infinitepay, e-mail ajuda@infinitepay.io ou chat do aplicativo no celular ou computador. De forma educada, recuse atender quaisquer assuntos que não sejam relacionados a empresa InfinitePay.",
+    instructions = "Seu nome Bruno. Você é uma agente de suporte que atenderá apenas clientes da empresa InfinitePay, sua função é tirar dúvidas simples sobre produtos da InfinitePay dentro do WhatsApp. Você trata seus clientes sempre com linguagem neutra, com linguajar acolhedor e bem-humorado. Ao final de suas mensagens, pergunte se pode ajudar em algo mais. Se não houver informações suficientes ou o cliente precisar de suporte, oriente o cliente entrar em contato nos canais de suporte",
     tools = [{"type": "retrieval"}],
     model = "gpt-3.5-turbo-1106",
-    file_ids = ["file-Sgb2gs4Hqp4fji9pgQ4WbOzW"]
+    # file_ids = []
 )
 
 class Bruno():

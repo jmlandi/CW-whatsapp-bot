@@ -10,17 +10,13 @@ db.init_app(app)
 def index():
     return Controller.index()
 
-@app.route('/executions')
-def executions():
-    return Controller.executions()
-
 @app.route('/ai-response', methods=['POST'])
 def ai_response():
     return Controller.ai_response()
 
-# only by message service, not apply on workflow
-@app.route('/incoming-message', methods=['POST'])
-def incoming_message():
+@app.route('/send-template', methods=['POST'])
+def send_template():
+    return Controller.send_template()
     return Controller.incoming_message()
 
 with app.app_context():
