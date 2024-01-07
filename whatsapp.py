@@ -5,7 +5,7 @@ import os
 account_sid = os.environ.get('TWILIO_ACCOUNT_SID')
 auth_token = os.environ.get('TWILIO_AUTH_TOKEN')
 flow_id = 'FW82751984a3114708b0ccfcf7b7d5a9ce'
-msg_id = 'whatsapp:+17372010046'
+msg_id = 'MGd94a9cfa8b692f43cc247944988eb291'
 
 client = Client(account_sid, auth_token)
 
