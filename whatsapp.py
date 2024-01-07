@@ -64,5 +64,5 @@ class Prd():
             if execution.status != 'active':
                 return False
             else:
-                return True 
+                return True
             

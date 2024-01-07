@@ -15,7 +15,7 @@ class Controller():
     
     def incoming_message():
         
-        name = request.form.get('Name')
+        name = request.form.get('ProfileName')
         contact = request.form.get('From')
         message_sid = request.form.get('MessageSid')
         body = request.form.get('Body')
