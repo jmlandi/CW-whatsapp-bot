@@ -3,7 +3,7 @@ from knowledge import bruno_rules
 import os
 
 client = OpenAI(api_key = os.environ.get('OPENAI_API_KEY'))
-bruno_id = "asst_elCDJuOiIXyBu3v8AggRBgRK"
+bruno_id = "asst_VvGXR2BdIltIKSoEuJhLusP3"
 
 # creating file and assistant on OpenAi API
 def gpt_init():
@@ -47,9 +47,10 @@ class Bruno():
         )
         return message
     
-    def thread_run(thread, assistant_id = bruno_id):
+    def thread_run(thread, instructions, assistant_id = bruno_id):
         run = client.beta.threads.runs.create(
             thread_id = thread.id,
+            instructions = instructions,
             assistant_id = assistant_id
         )
         return run

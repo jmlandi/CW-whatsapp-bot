@@ -21,21 +21,24 @@ class Controller():
 
             thread = Bruno.thread_init()
             Bruno.thread_message(thread, message)
-            
-            run = Bruno.thread_run(thread)
-            Bruno.thread_response(thread, run)
-
-            messages = Bruno.thread_messages_list(thread)
+            Bruno.thread_run(thread, "O produto InfinitePay em questão é: {topic}")
+            assistant_response = Bruno.thread_assitant_reponse()
 
             new_thread = Threads(
                 flow_id = flow_id,
                 thread_id = thread.id,
-                topic = topic,
-                messages = messages
+                topic = topic
             )
             db.session.add(new_thread)
             db.session.commit()
+        
+        else:
+            conversation = Threads.filter_by(flow_id=flow_id).first()
+            Bruno.thread_message(conversation.thread_id, message)
+            Bruno.thread_run(conversation.thread_id)
+            assistant_response = Bruno.thread_assitant_reponse()
+            
 
 
-        response = {'response': jsonify(Bruno.thread_assitant_reponse(thread))}
+        response = {'response': assistant_response}
         return jsonify(response), 200
