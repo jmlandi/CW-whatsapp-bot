@@ -59,10 +59,11 @@ class Prd():
             execution = client.studio \
                   .v2 \
                   .flows(flow_id) \
-                  .executions(contact_info.message_sid) \
+                  .executions(contact_info.execution_sid) \
                   .fetch()
             if execution.status != 'active':
                 return False
             else:
                 return True
+
             
