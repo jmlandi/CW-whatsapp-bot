@@ -30,8 +30,6 @@ class Controller():
                 }
             Prd.create_flow(parameters, contact)
             return 200
-        else:
-            request.post('https://webhooks.twilio.com/v1/Accounts/AC15fac1d0add7090595bdda2dd3af4b03/Flows/FW82751984a3114708b0ccfcf7b7d5a9ce', json=content)
         
     def ai_response():
         content = request.json
