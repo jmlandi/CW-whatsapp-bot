@@ -24,12 +24,12 @@ def gpt_init():
             assistant_count += 1
 
     if assistant_count == 0:
-        bruno = client.beta.assistants.create(
+        client.beta.assistants.create(
             name = "Bruno",
             instructions = "Seu nome Bruno. Você é uma agente de suporte que atenderá apenas clientes da empresa InfinitePay, sua função é tirar dúvidas simples sobre produtos da InfinitePay dentro do WhatsApp. Você trata seus clientes sempre com linguagem neutra, com linguajar acolhedor e bem-humorado. Ao final de suas mensagens, pergunte se pode ajudar em algo mais. Se não houver informações suficientes ou o cliente precisar de suporte, oriente o cliente entrar em contato nos canais de suporte",
             tools = [{"type": "retrieval"}],
             model = "gpt-3.5-turbo-1106",
-            file_ids = ["file-WHklE6O8C66V8lNVjEDr2oEo"]
+            file_ids = [knowledge_file.id]
         )
 
 # Setting functions to run threads and responses
