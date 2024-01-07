@@ -3,7 +3,6 @@ from models import Executions, Threads
 from assistants import Bruno
 from whatsapp import Prd
 from flask import render_template, request, jsonify
-import requests
 
 class Controller():
     
@@ -30,7 +29,6 @@ class Controller():
                 }
             Prd.create_flow(parameters, contact)
             return 200
-
         
     def ai_response():
         content = request.json
