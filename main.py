@@ -1,10 +1,12 @@
 from database import db
 from flask import Flask
 from controllers import Controller
+from assistants import gpt_init
 
 app = Flask('app')
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///database.db'
 db.init_app(app)
+gpt_init()
 
 @app.route('/')
 def index():
