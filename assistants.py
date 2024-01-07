@@ -9,7 +9,7 @@ bruno_id = "asst_VvGXR2BdIltIKSoEuJhLusP3"
 def gpt_init():
     file_list, file_count = client.files.list(), 0
     for file in file_list.data:
-        if file.filename == "infinitepay":
+        if file.filename == "infinitepay.txt":
             file_count +=1
 
     if file_count == 0:
