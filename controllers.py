@@ -21,7 +21,14 @@ class Controller():
 
             thread = Bruno.thread_init()
             Bruno.thread_message(thread, message)
-            Bruno.thread_run(thread, "O produto InfinitePay em questão é: {topic}")
+            run = Bruno.thread_run(thread, "O produto InfinitePay em questão é: {topic}")
+            retrieve, cont_retrieve = Bruno.thread_retrieve_run(thread, run), 0
+            while retrieve.status != "completed":
+                retrieve = Bruno.thread_retrieve_run(thread, run)
+                time.sleep(0.5)
+                cont_retrieve += 1
+                if cont_retrieve > 5:
+                    break
             assistant_response = Bruno.thread_assitant_reponse(thread)
 
             new_thread = Threads(
@@ -38,8 +45,8 @@ class Controller():
             run = Bruno.thread_run(conversation.thread_id)
             retrieve, cont_retrieve = Bruno.thread_retrieve_run(thread, run), 0
             while retrieve.status != "completed":
-                time.sleep(0.5)
                 retrieve = Bruno.thread_retrieve_run(thread, run)
+                time.sleep(0.5)
                 cont_retrieve += 1
                 if cont_retrieve > 5:
                     break
