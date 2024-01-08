@@ -25,7 +25,7 @@ class Controller():
 
 
             Bruno.thread_message(thread_id, message)
-            run = Bruno.thread_run(thread_id, f"O cliente com interesse no {topic}")
+            run = Bruno.thread_run(thread_id)
             retrieve = Bruno.thread_retrieve_run(thread_id, run)
             while True:
                 retrieve = Bruno.thread_retrieve_run(thread_id, run)
@@ -40,7 +40,7 @@ class Controller():
             conversation = Threads.query.filter_by(flow_id=flow_id).first()
 
             Bruno.thread_message(conversation.thread_id, message)
-            run = Bruno.thread_run(conversation.thread_id, f"O cliente com interesse no {conversation.topic}")
+            run = Bruno.thread_run(conversation.thread_id)
             retrieve = Bruno.thread_retrieve_run(conversation.thread_id, run)
             while True:
                 retrieve = Bruno.thread_retrieve_run(conversation.thread_id, run)
