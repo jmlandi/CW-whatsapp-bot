@@ -25,7 +25,7 @@ class Controller():
             while True:
                 retrieve = Bruno.thread_retrieve_run(thread, run)
                 if retrieve != "in_progress":
-                    assistant_response = Bruno.thread_assitant_reponse(thread)
+                    assistant_response = retrieve # Bruno.thread_assitant_reponse(thread)
                     break
 
 
