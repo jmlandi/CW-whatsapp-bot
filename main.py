@@ -20,7 +20,7 @@ def ai_response():
 @app.route('/ai-completion', methods=['POST'])
 def ai_completion():
     content = request.get_json()
-    return Controller.ai_completion(content.body)
+    return Controller.ai_completion(content)
     return Controller.incoming_message()
 
 with app.app_context():

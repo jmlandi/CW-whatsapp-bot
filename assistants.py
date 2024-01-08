@@ -65,7 +65,6 @@ class Bruno():
         )
         return response.data[0].content[0].text.value
 
-
     def bruno_completion(prompt):  
         completion = client.chat.completions.create(
             model = 'gpt-3.5-turbo',
