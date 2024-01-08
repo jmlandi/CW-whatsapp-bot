@@ -78,7 +78,7 @@ class Bruno():
                     'content': prompt["body"]
                 }
             ],
-            max_tokens = 499
+            max_tokens = 256
         )
         return completion.choices[0].message.content
     
