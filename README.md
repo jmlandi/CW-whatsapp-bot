@@ -16,4 +16,4 @@ I created Bruno with OpenAi API using the `Threads` resources. His knowledge is 
 <img width="100%" alt="Twilio" src="https://github.com/jmlandi/cw-whatsapp-bot/assets/98327875/506fb60f-c70d-4815-882c-9f8046f22115">
 
 ## Hosting & Comunication 🛠️
-For hosting my GPT Assistant and Python services I used `www.pythonanywhere.com`.
+For hosting my GPT Assistant and `Python Flask` server I used `www.pythonanywhere.com`.
