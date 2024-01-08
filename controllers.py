@@ -10,12 +10,12 @@ class Controller():
         return 'API Online'
           
     def ai_response():
-        content = request.get_json(silent=True)
+        content = request.get_json()
         
-        flow_id = content.flow
-        message = content.Body
-        topic = content.knowledge
-        start = content.start
+        flow_id = content['flow']
+        message = content['body']
+        topic = content['knowledge']
+        start = content['start']
         
         if start == 'true':
 
