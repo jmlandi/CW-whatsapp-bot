@@ -2,7 +2,6 @@ from database import db
 from models import Threads
 from assistants import Bruno
 from flask import jsonify
-import time
 
 class Controller():
     
@@ -34,7 +33,6 @@ class Controller():
                     assistant_response = Bruno.thread_assitant_reponse(thread_id)
                     response = {'response': assistant_response}
                     return jsonify(response), 200
-                time.sleep(1)
               
         else:
             conversation = Threads.query.filter_by(flow_id=flow_id).first()
@@ -48,6 +46,5 @@ class Controller():
                     assistant_response = Bruno.thread_assitant_reponse(conversation.thread_id)
                     response = {'response': assistant_response}
                     return jsonify(response), 200
-                time.sleep(1)
             
         
