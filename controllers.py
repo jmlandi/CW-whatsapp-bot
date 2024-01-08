@@ -3,6 +3,7 @@ from models import Executions, Threads
 from assistants import Bruno
 from whatsapp import Prd
 from flask import render_template, request, jsonify
+import time
 
 class Controller():
     
@@ -34,7 +35,14 @@ class Controller():
         else:
             conversation = Threads.filter_by(flow_id=flow_id).first()
             Bruno.thread_message(conversation.thread_id, message)
-            Bruno.thread_run(conversation.thread_id)
+            run = Bruno.thread_run(conversation.thread_id)
+            retrieve, cont_retrieve = Bruno.thread_retrieve_run(thread, run), 0
+            while retrieve.status != "completed":
+                time.sleep(0.5)
+                retrieve = Bruno.thread_retrieve_run(thread, run)
+                cont_retrieve += 1
+                if cont_retrieve > 5:
+                    break
             assistant_response = Bruno.thread_assitant_reponse(conversation.thread_id)
             
 
