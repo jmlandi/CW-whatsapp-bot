@@ -73,10 +73,9 @@ class Bruno():
     
     def thread_assitant_reponse(thread):
         response = client.beta.threads.messages.list(
-            thread_id = thread.id,
-            limit = 1
+            thread_id = thread.id
         )
-        return response.data.content[0].text.value
+        return response.data[0].content[0].text.value
 
 
     def response(prompt, rules = bruno_rules):
