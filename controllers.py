@@ -21,7 +21,7 @@ class Controller():
 
             thread = Bruno.thread_init()
             Bruno.thread_message(thread, message)
-            run = Bruno.thread_run(thread, "O produto InfinitePay em questão é: {topic}")
+            run = Bruno.thread_run(thread, "O assunto da conversa é o produto {topic} da InfinitePay.")
             retrieve = Bruno.thread_retrieve_run(thread, run)
             while True:
                 retrieve = Bruno.thread_retrieve_run(thread, run)
