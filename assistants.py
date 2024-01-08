@@ -7,7 +7,7 @@ bruno_id = "asst_bPcCzTiOxUNvpMUR7LtAmgQ9"
 
 # creating file and assistant on OpenAi API
 def gpt_init():
-            
+
     assistant_list, assistant_count = client.beta.assistants.list(), 0
     for assistant in assistant_list.data:
         if assistant.name == "Bruno":
@@ -16,7 +16,7 @@ def gpt_init():
     if assistant_count == 0:
         client.beta.assistants.create(
             name = "Bruno",
-            instructions = "Seu nome Bruno. Você é uma agente de suporte que atenderá apenas clientes da empresa InfinitePay, sua função é tirar dúvidas simples sobre produtos da InfinitePay dentro do WhatsApp. Você trata seus clientes sempre com linguagem neutra, com linguajar acolhedor e bem-humorado. Ao final de suas mensagens, pergunte se pode ajudar em algo mais. Se não houver informações suficientes ou o cliente precisar de suporte, oriente o cliente entrar em contato nos canais de suporte",
+            instructions = bruno_rules,
             model = "gpt-3.5-turbo-1106"
         )
 
@@ -27,41 +27,41 @@ class Bruno():
         thread = client.beta.threads.create()
         return thread
     
-    def thread_message(thread, prompt):
+    def thread_message(thread_id, prompt):
         message = client.beta.threads.messages.create(
-            thread_id = thread.id,
+            thread_id = thread_id,
             role = "user",
             content = prompt
         )
         return message
     
-    def thread_run(thread, instructions, assistant_id = bruno_id):
+    def thread_run(thread_id, instructions, assistant_id = bruno_id):
         run = client.beta.threads.runs.create(
-            thread_id = thread.id,
+            thread_id = thread_id,
             instructions = instructions,
             assistant_id = assistant_id
         )
         return run
     
-    def thread_retrieve_run(thread, run):
+    def thread_retrieve_run(thread_id, run):
         retrieve = client.beta.threads.runs.retrieve(
-            thread_id = thread.id,
+            thread_id = thread_id,
             run_id = run.id
         )
         return retrieve
 
-    def thread_messages_list(thread):
+    def thread_messages_list(thread_id):
         messages = client.beta.threads.messages.list(
-            thread_id = thread.id
+            thread_id = thread_id
         )
         messages_list = []
         for message in reversed(messages.data):
             messages_list.append(f"{message.role}: {message.content[0].text.value}")
         return messages_list
     
-    def thread_assitant_reponse(thread):
+    def thread_assitant_reponse(thread_id):
         response = client.beta.threads.messages.list(
-            thread_id = thread.id
+            thread_id = thread_id
         )
         return response.data[0].content[0].text.value
 

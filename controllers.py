@@ -1,9 +1,7 @@
 from database import db
 from models import Executions, Threads
 from assistants import Bruno
-from knowledge import bruno_rules
-from whatsapp import Prd
-from flask import render_template, request, jsonify
+from flask import jsonify
 import time
 
 class Controller():
@@ -21,33 +19,33 @@ class Controller():
         if start == 'true':
 
             thread = Bruno.thread_init()
-            new_thread = Threads(flow_id = flow_id, thread_id = thread.id, topic = topic)
+            thread_id = thread.id
+            new_thread = Threads(flow_id = flow_id, thread_id = thread_id, topic = topic)
             db.session.add(new_thread)
             db.session.commit()
 
 
-            Bruno.thread_message(thread, message)
-            run = Bruno.thread_run(thread, f"O assunto da conversa é o produto {topic} da InfinitePay. {bruno_rules}")
-            retrieve = Bruno.thread_retrieve_run(thread, run)
+            Bruno.thread_message(thread_id, message)
+            run = Bruno.thread_run(thread_id, f"O cliente com interesse no {topic}")
+            retrieve = Bruno.thread_retrieve_run(thread_id, run)
             while True:
-                retrieve = Bruno.thread_retrieve_run(thread, run)
+                retrieve = Bruno.thread_retrieve_run(thread_id, run)
                 if retrieve.status != "in_progress":
-                    assistant_response = Bruno.thread_assitant_reponse(thread)
+                    assistant_response = Bruno.thread_assitant_reponse(thread_id)
                     response = {'response': assistant_response}
                     return jsonify(response), 200
                 time.sleep(1)
               
         else:
             conversation = Threads.query.filter_by(flow_id=flow_id).first()
-            thread = {"id":conversation.thread_id}
 
-            Bruno.thread_message(thread, message)
-            run = Bruno.thread_run(thread)
-            retrieve = Bruno.thread_retrieve_run(thread, run)
+            Bruno.thread_message(conversation.thread_id, message)
+            run = Bruno.thread_run(conversation.thread_id)
+            retrieve = Bruno.thread_retrieve_run(conversation.thread_id, run)
             while True:
-                retrieve = Bruno.thread_retrieve_run(thread, run)
+                retrieve = Bruno.thread_retrieve_run(conversation.thread_id, run)
                 if retrieve.status != "in_progress":
-                    assistant_response = Bruno.thread_assitant_reponse(thread)
+                    assistant_response = Bruno.thread_assitant_reponse(conversation.thread_id)
                     response = {'response': assistant_response}
                     return jsonify(response), 200
                 time.sleep(1)
