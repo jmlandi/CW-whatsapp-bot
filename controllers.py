@@ -20,6 +20,11 @@ class Controller():
         if start == 'true':
 
             thread = Bruno.thread_init()
+            new_thread = Threads(flow_id = flow_id, thread_id = thread.id, topic = topic)
+            db.session.add(new_thread)
+            db.session.commit()
+
+
             Bruno.thread_message(thread, message)
             run = Bruno.thread_run(thread, "O assunto da conversa é o produto {topic} da InfinitePay.")
             retrieve = Bruno.thread_retrieve_run(thread, run)
@@ -28,19 +33,8 @@ class Controller():
                 if retrieve.status != "in_progress":
                     assistant_response = Bruno.thread_assitant_reponse(thread)
                     response = {'response': assistant_response}
-                    break
+                    return jsonify(response), 200
                 time.sleep(0.5)
-
-            new_thread = Threads(
-                flow_id = flow_id,
-                thread_id = thread.id,
-                topic = topic
-            )
-            db.session.add(new_thread)
-            db.session.commit()
-
-            if retrieve.status != "in_progress":
-                return jsonify(response), 200
               
         else:
             conversation = Threads.query.filter_by(flow_id=flow_id).first()
@@ -54,10 +48,7 @@ class Controller():
                 if retrieve.status != "in_progress":
                     assistant_response = Bruno.thread_assitant_reponse(thread)
                     response = {'response': assistant_response}
-                    break
+                    return jsonify(response), 200
                 time.sleep(0.5)
-            
-            if retrieve.status != "in_progress":
-                return jsonify(response), 200
             
         
