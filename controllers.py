@@ -29,7 +29,7 @@ class Controller():
                     assistant_response = Bruno.thread_assitant_reponse(thread)
                     response = {'response': assistant_response}
                     break
-                time.sleep(1)
+                time.sleep(0.5)
 
             new_thread = Threads(
                 flow_id = flow_id,
@@ -42,17 +42,23 @@ class Controller():
             if retrieve.status != "in_progress":
                 return jsonify(response), 200
         
-        '''
+        
         else:
             conversation = Threads.filter_by(flow_id=flow_id).first()
-            Bruno.thread_message(conversation.thread_id, message)
-            run = Bruno.thread_run(conversation.thread_id)
-            retrieve, cont_retrieve = Bruno.thread_retrieve_run(thread, run), 0
-            while retrieve.status != "completed":
+            thread = {"id":conversation.thread_id}
+
+            Bruno.thread_message(thread, message)
+            run = Bruno.thread_run(thread)
+            retrieve = Bruno.thread_retrieve_run(thread, run)
+            while True:
                 retrieve = Bruno.thread_retrieve_run(thread, run)
-                time.sleep(0.5)
-                cont_retrieve += 1
-                if cont_retrieve > 5:
+                if retrieve.status != "in_progress":
+                    assistant_response = Bruno.thread_assitant_reponse(thread)
+                    response = {'response': assistant_response}
                     break
-            assistant_response = Bruno.thread_assitant_reponse(conversation.thread_id)
-        '''
+                time.sleep(0.5)
+            
+            if retrieve.status != "in_progress":
+                return jsonify(response), 200
+            
+        
