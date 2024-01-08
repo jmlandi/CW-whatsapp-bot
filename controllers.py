@@ -24,9 +24,10 @@ class Controller():
             retrieve = Bruno.thread_retrieve_run(thread, run)
             while True:
                 retrieve = Bruno.thread_retrieve_run(thread, run)
-                if retrieve == "completed":
+                if retrieve != "in_progress":
                     assistant_response = Bruno.thread_assitant_reponse(thread)
                     break
+
 
             new_thread = Threads(
                 flow_id = flow_id,
