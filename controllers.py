@@ -46,5 +46,8 @@ class Controller():
                     assistant_response = Bruno.thread_assitant_reponse(conversation.thread_id)
                     response = {'response': assistant_response}
                     return jsonify(response), 200
+                
+    def ai_completion(prompt):
+        Bruno.bruno_completion(prompt)
             
         

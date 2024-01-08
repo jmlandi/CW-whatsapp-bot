@@ -17,9 +17,10 @@ def ai_response():
     content = request.get_json()
     return Controller.ai_response(content)
 
-@app.route('/send-template', methods=['POST'])
-def send_template():
-    return Controller.send_template()
+@app.route('/ai-completion', methods=['POST'])
+def ai_completion():
+    content = request.get_json()
+    return Controller.ai_completion(content['body'])
     return Controller.incoming_message()
 
 with app.app_context():

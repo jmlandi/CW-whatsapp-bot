@@ -66,20 +66,20 @@ class Bruno():
         return response.data[0].content[0].text.value
 
 
-        
+    def bruno_completion(prompt):  
         completion = client.chat.completions.create(
             model = 'gpt-3.5-turbo',
             messages = [
                 {
                     'role': 'system',
-                    'content': rules
+                    'content': bruno_rules
                 },
                 {
                     'role': 'user',
                     'content': prompt
                 }
             ],
-            max_tokens = 72
+            max_tokens = 499
         )
-
         return completion.choices[0].message.content
+    
