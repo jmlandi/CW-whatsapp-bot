@@ -10,7 +10,7 @@ class Controller():
         return 'API Online'
           
     def ai_response():
-        content = request.json
+        content = request.get_json(silent=True)
         
         flow_id = content.flow
         message = content.Body
