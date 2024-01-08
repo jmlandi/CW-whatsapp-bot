@@ -28,7 +28,7 @@ class Controller():
                 if retrieve.status != "in_progress":
                     assistant_response = Bruno.thread_assitant_reponse(thread)
                     break
-                time.sleep(1)
+                ## time.sleep(1)
 
 
             new_thread = Threads(
