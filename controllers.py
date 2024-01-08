@@ -41,10 +41,9 @@ class Controller():
 
             if retrieve.status != "in_progress":
                 return jsonify(response), 200
-        
-        
+              
         else:
-            conversation = Threads.filter_by(flow_id=flow_id).first()
+            conversation = Threads.query.filter_by(flow_id=flow_id).first()
             thread = {"id":conversation.thread_id}
 
             Bruno.thread_message(thread, message)
