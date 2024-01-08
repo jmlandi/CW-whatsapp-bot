@@ -3,21 +3,11 @@ from knowledge import bruno_rules
 import os
 
 client = OpenAI(api_key = os.environ.get('OPENAI_API_KEY'))
-bruno_id = "asst_VvGXR2BdIltIKSoEuJhLusP3"
+bruno_id = "asst_bPcCzTiOxUNvpMUR7LtAmgQ9"
 
 # creating file and assistant on OpenAi API
 def gpt_init():
-    file_list, file_count = client.files.list(), 0
-    for file in file_list.data:
-        if file.filename == "infinitepay.txt":
-            file_count +=1
-
-    if file_count == 0:
-        knowledge_file = client.files.create(
-            file = open("knowledge/infinitepay.txt", "rb"),
-            purpose = "assistants"
-        )
-        
+            
     assistant_list, assistant_count = client.beta.assistants.list(), 0
     for assistant in assistant_list.data:
         if assistant.name == "Bruno":
@@ -28,7 +18,6 @@ def gpt_init():
             name = "Bruno",
             instructions = "Seu nome Bruno. Você é uma agente de suporte que atenderá apenas clientes da empresa InfinitePay, sua função é tirar dúvidas simples sobre produtos da InfinitePay dentro do WhatsApp. Você trata seus clientes sempre com linguagem neutra, com linguajar acolhedor e bem-humorado. Ao final de suas mensagens, pergunte se pode ajudar em algo mais. Se não houver informações suficientes ou o cliente precisar de suporte, oriente o cliente entrar em contato nos canais de suporte",
             model = "gpt-3.5-turbo-1106"
-            # file_ids = [knowledge_file.id]
         )
 
 # Setting functions to run threads and responses

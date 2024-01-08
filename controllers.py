@@ -1,6 +1,7 @@
 from database import db
 from models import Executions, Threads
 from assistants import Bruno
+from knowledge import bruno_rules
 from whatsapp import Prd
 from flask import render_template, request, jsonify
 import time
@@ -26,7 +27,7 @@ class Controller():
 
 
             Bruno.thread_message(thread, message)
-            run = Bruno.thread_run(thread, "O assunto da conversa é o produto {topic} da InfinitePay.")
+            run = Bruno.thread_run(thread, f"O assunto da conversa é o produto {topic} da InfinitePay. {bruno_rules}")
             retrieve = Bruno.thread_retrieve_run(thread, run)
             while True:
                 retrieve = Bruno.thread_retrieve_run(thread, run)
