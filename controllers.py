@@ -34,7 +34,7 @@ class Controller():
                     assistant_response = Bruno.thread_assitant_reponse(thread)
                     response = {'response': assistant_response}
                     return jsonify(response), 200
-                time.sleep(0.5)
+                time.sleep(1)
               
         else:
             conversation = Threads.query.filter_by(flow_id=flow_id).first()
@@ -49,6 +49,6 @@ class Controller():
                     assistant_response = Bruno.thread_assitant_reponse(thread)
                     response = {'response': assistant_response}
                     return jsonify(response), 200
-                time.sleep(0.5)
+                time.sleep(1)
             
         
