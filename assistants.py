@@ -75,7 +75,7 @@ class Bruno():
         response = client.beta.threads.messages.list(
             thread_id = thread.id
         )
-        return response.data[-1].content[0].text.value
+        return response.data[0].content[0].text.value
 
 
     def response(prompt, rules = bruno_rules):
