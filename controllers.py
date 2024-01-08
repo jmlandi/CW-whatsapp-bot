@@ -3,6 +3,7 @@ from models import Executions, Threads
 from assistants import Bruno
 from whatsapp import Prd
 from flask import render_template, request, jsonify
+import time
 
 class Controller():
     
@@ -27,6 +28,7 @@ class Controller():
                 if retrieve.status != "in_progress":
                     assistant_response = Bruno.thread_assitant_reponse(thread)
                     break
+                time.sleep(1)
 
 
             new_thread = Threads(
