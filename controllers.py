@@ -31,7 +31,7 @@ class Controller():
                 retrieve = Bruno.thread_retrieve_run(thread_id, run)
                 if retrieve.status != "in_progress":
                     assistant_response = Bruno.thread_assitant_reponse(thread_id)
-                    if (assistant_response == assistant_response):
+                    if (assistant_response == message):
                         return 500
                     response = {'response': assistant_response}
                     return jsonify(response), 200
@@ -46,7 +46,7 @@ class Controller():
                 retrieve = Bruno.thread_retrieve_run(conversation.thread_id, run)
                 if retrieve.status != "in_progress":
                     assistant_response = Bruno.thread_assitant_reponse(conversation.thread_id)
-                    if (assistant_response == assistant_response):
+                    if (assistant_response == message):
                         return 500
                     response = {'response': assistant_response}
                     return jsonify(response), 200
