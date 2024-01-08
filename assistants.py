@@ -1,8 +1,9 @@
 from openai import OpenAI
-from knowledge import bruno_rules
+from knowledge import Knowledge
 import os
 
 client = OpenAI(api_key = os.environ.get('OPENAI_API_KEY'))
+bruno_rules = Knowledge.bruno_rules("InfinitePay")
 bruno_id = "asst_bPcCzTiOxUNvpMUR7LtAmgQ9"
 
 # creating assistant on OpenAi API
@@ -35,10 +36,9 @@ class Bruno():
         )
         return message
     
-    def thread_run(thread_id, instructions, assistant_id = bruno_id):
+    def thread_run(thread_id, assistant_id = bruno_id):
         run = client.beta.threads.runs.create(
             thread_id = thread_id,
-            instructions = instructions,
             assistant_id = assistant_id
         )
         return run
@@ -71,7 +71,7 @@ class Bruno():
             messages = [
                 {
                     'role': 'system',
-                    'content': bruno_rules
+                    'content': Knowledge.bruno_rules(prompt["topic"])
                 },
                 {
                     'role': 'user',
