@@ -21,7 +21,7 @@ class Controller():
             thread = Bruno.thread_init()
             Bruno.thread_message(thread, message)
             Bruno.thread_run(thread, "O produto InfinitePay em questão é: {topic}")
-            assistant_response = Bruno.thread_assitant_reponse()
+            assistant_response = Bruno.thread_assitant_reponse(thread)
 
             new_thread = Threads(
                 flow_id = flow_id,
@@ -35,7 +35,7 @@ class Controller():
             conversation = Threads.filter_by(flow_id=flow_id).first()
             Bruno.thread_message(conversation.thread_id, message)
             Bruno.thread_run(conversation.thread_id)
-            assistant_response = Bruno.thread_assitant_reponse()
+            assistant_response = Bruno.thread_assitant_reponse(conversation.thread_id)
             
 
 
