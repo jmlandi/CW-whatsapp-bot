@@ -52,6 +52,8 @@ class Controller():
                     return jsonify(response), 200
                 
     def ai_completion(prompt):
-        Bruno.bruno_completion(prompt)
+        completion = Bruno.bruno_completion(prompt)
+        response = {'response': completion}
+        return jsonify(response), 200
             
         
