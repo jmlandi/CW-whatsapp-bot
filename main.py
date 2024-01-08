@@ -1,5 +1,5 @@
 from database import db
-from flask import Flask
+from flask import Flask, request
 from controllers import Controller
 from assistants import gpt_init
 
@@ -14,7 +14,8 @@ def index():
 
 @app.route('/ai-response', methods=['POST'])
 def ai_response():
-    return Controller.ai_response()
+    content = request.get_json()
+    return Controller.ai_response(content)
 
 @app.route('/send-template', methods=['POST'])
 def send_template():

@@ -9,8 +9,7 @@ class Controller():
     def index():
         return 'API Online'
           
-    def ai_response():
-        content = request.get_json()
+    def ai_response(content):
         
         flow_id = content['flow']
         message = content['body']
