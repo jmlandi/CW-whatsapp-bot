@@ -5,7 +5,7 @@ import os
 client = OpenAI(api_key = os.environ.get('OPENAI_API_KEY'))
 bruno_id = "asst_bPcCzTiOxUNvpMUR7LtAmgQ9"
 
-# creating file and assistant on OpenAi API
+# creating assistant on OpenAi API
 def gpt_init():
 
     assistant_list, assistant_count = client.beta.assistants.list(), 0
@@ -66,7 +66,6 @@ class Bruno():
         return response.data[0].content[0].text.value
 
 
-    def response(prompt, rules = bruno_rules):
         
         completion = client.chat.completions.create(
             model = 'gpt-3.5-turbo',

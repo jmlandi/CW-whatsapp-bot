@@ -1,11 +1,12 @@
 from twilio.rest import Client
-from models import Executions, db
 import os
 
 account_sid = os.environ.get('TWILIO_ACCOUNT_SID')
 auth_token = os.environ.get('TWILIO_AUTH_TOKEN')
 flow_id = 'FW82751984a3114708b0ccfcf7b7d5a9ce'
 msg_id = 'whatsapp:+17372010046'
+
+## this file was used only on tests. As I am using Twilio Flow, all WhatsApp configuration is now avaiable on Twillio Console
 
 client = Client(account_sid, auth_token)
 

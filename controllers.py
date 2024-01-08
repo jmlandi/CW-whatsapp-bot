@@ -1,5 +1,5 @@
 from database import db
-from models import Executions, Threads
+from models import Threads
 from assistants import Bruno
 from flask import jsonify
 import time
