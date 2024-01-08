@@ -1,18 +1,19 @@
 # CloudWalk WhatsApp Bot 🤖
 **Challenge:** Build a WhatsApp bot that incorporates a decision tree, allowing users to choose between two InfinitePay products and use AI to address basic questions about these products.
-### [Chat With Marta, click here!](https://api.whatsapp.com/send/?phone=14155238886&text=Ol%C3%A1%2C+gostaria+de+ser+atendido.&type=phone_number&app_absent=0)
+### [Chat With Bruno, click here!](https://api.whatsapp.com/send/?phone=17372010046)
 
 ## Decision Tree 🌳
-Coming soon.
+Intial decision Tree, `created on Figma`. It's not exactly the way the bot was created, but this flow gave me a north on my developing.
 
-## Knowledge 📚
-Coming soon.
+<img width="100%" alt="WhatsApp" src="https://github.com/jmlandi/cw-whatsapp-bot/assets/98327875/fc0e627e-8bb5-403c-b3a1-f285f155d555">
 
 ## WhatsApp 🟢
-Coming soon.
+All configuration was made with `Twilio Flow`.
+<img width="100%" alt="Twilio" src="https://github.com/jmlandi/cw-whatsapp-bot/assets/98327875/74e6df53-89f4-4bd9-a1c1-74b3dfacf619">
+
+## Assistant 🤖
+I created Bruno with OpenAi API using the `Threads` resources. His knowledge is not big, as my intention was to create a flow with minimum costs, but he can solve slly doubts. 
+<img width="100%" alt="Twilio" src="https://github.com/jmlandi/cw-whatsapp-bot/assets/98327875/506fb60f-c70d-4815-882c-9f8046f22115">
 
 ## Hosting & Comunication 🛠️
-Coming soon.
-
-## Conclusion 🪄
-Coming soon.
+For hosting my GPT Assistant and `Python Flask` server I used `www.pythonanywhere.com`.
