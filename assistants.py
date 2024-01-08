@@ -75,7 +75,7 @@ class Bruno():
                 },
                 {
                     'role': 'user',
-                    'content': prompt
+                    'content': prompt["body"]
                 }
             ],
             max_tokens = 499
