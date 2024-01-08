@@ -4,7 +4,7 @@
 
 ## Decision Tree 🌳
 Intial decision Tree, created on Figma. It's not exactly the way the bot was created, but this flow gave me a north on my developing.
-</br>
+_
 <img width="100%" alt="WhatsApp" src="https://github.com/jmlandi/cw-whatsapp-bot/assets/98327875/fc0e627e-8bb5-403c-b3a1-f285f155d555">
 
 ## WhatsApp 🟢
