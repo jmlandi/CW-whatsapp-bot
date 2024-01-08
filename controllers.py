@@ -27,9 +27,9 @@ class Controller():
                 retrieve = Bruno.thread_retrieve_run(thread, run)
                 if retrieve.status != "in_progress":
                     assistant_response = Bruno.thread_assitant_reponse(thread)
+                    response = {'response': assistant_response}
                     break
-                ## time.sleep(1)
-
+                time.sleep(1)
 
             new_thread = Threads(
                 flow_id = flow_id,
@@ -38,6 +38,9 @@ class Controller():
             )
             db.session.add(new_thread)
             db.session.commit()
+
+            if retrieve.status != "in_progress":
+                return jsonify(response), 200
         
         '''
         else:
@@ -53,6 +56,3 @@ class Controller():
                     break
             assistant_response = Bruno.thread_assitant_reponse(conversation.thread_id)
         '''
-            
-        response = {'response': assistant_response}
-        return jsonify(response), 200
