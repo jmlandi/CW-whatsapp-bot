@@ -12,7 +12,7 @@ All configuration was made with `Twilio Flow`.
 <img width="100%" alt="Twilio" src="https://github.com/jmlandi/cw-whatsapp-bot/assets/98327875/74e6df53-89f4-4bd9-a1c1-74b3dfacf619">
 
 ## Assistant 🤖
-I created Bruno with OpenAi API using the `Threads` resources. His knowledge is not big, as my intention was to create a flow with minimum costs, but he can solve slly doubts. 
+I created Bruno with OpenAi API using the `Threads` and `Completions` resources. His knowledge is not big, as my intention was to create a flow with minimum costs, but he can solve silly doubts. 
 <img width="100%" alt="Twilio" src="https://github.com/jmlandi/cw-whatsapp-bot/assets/98327875/506fb60f-c70d-4815-882c-9f8046f22115">
 
 ## Hosting & Comunication 🛠️
