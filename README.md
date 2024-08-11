@@ -1,6 +1,6 @@
 # CloudWalk WhatsApp Bot 🤖
-**Challenge:** Build a WhatsApp bot that incorporates a decision tree, allowing users to choose between two InfinitePay products and use AI to address basic questions about these products.
-### [Chat With Bruno, click here!](https://api.whatsapp.com/send/?phone=17372010046)
+**CloudWalk Engineering Challenge:** Build a WhatsApp bot that incorporates a decision tree, allowing users to choose between two InfinitePay products and use AI to address basic questions about these products.
+<!-- ### [Chat With Bruno, click here!](https://api.whatsapp.com/send/?phone=17372010046) -->
 
 ## Decision Tree 🌳
 Intial decision Tree, `created on Figma`. It's not exactly the way the bot was created, but this flow gave me a north on my developing.
